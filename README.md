@@ -21,6 +21,9 @@ The extension can be used just like the JavaSpring generator described on the Op
 * https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-maven-plugin
 * https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/spring.md
 
+#### example
+An example project with a working setup is contained in the sub-directory **sample**
+
 There are just the following configurations, which are displayed in the example below:
 * plugin-configuration: \<generatorName>springCodegenWithoutSwagger\</generatorName>
 * plugin-configuration: \<library>without-swagger\</library>

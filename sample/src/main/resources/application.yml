@@ -1,0 +1,3 @@
+openapi:
+  petstore: # this name refers the given title in "openapi-generator-maven-plugin"
+    base-path: /api

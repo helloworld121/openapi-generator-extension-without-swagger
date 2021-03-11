@@ -1,0 +1,6 @@
+# Maven
+target/
+
+# IDE
+.idea/
+/sample.iml
