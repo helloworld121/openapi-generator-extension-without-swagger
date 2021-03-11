@@ -1,6 +1,9 @@
 # Maven
 target/
 
+# generated test folder
+build/
+
 # IDE
 .idea/
 /without-swagger.iml
