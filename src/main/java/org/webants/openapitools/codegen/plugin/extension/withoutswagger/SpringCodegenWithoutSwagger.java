@@ -1,5 +1,9 @@
 package org.webants.openapitools.codegen.plugin.extension.withoutswagger;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import org.openapitools.codegen.CodegenModel;
+import org.openapitools.codegen.CodegenProperty;
 import org.openapitools.codegen.SupportingFile;
 import org.openapitools.codegen.languages.SpringCodegen;
 
@@ -27,8 +31,18 @@ public class SpringCodegenWithoutSwagger
 
     @Override
     public List<SupportingFile> supportingFiles() {
+        // this is necessary to remove supporting files like pom...
+        // => the purpose of this extension is to generate just API and Models
         return Collections.emptyList();
     }
 
+    @Override
+    public void postProcessModelProperty(CodegenModel model, CodegenProperty property) {
+        super.postProcessModelProperty(model, property);
+
+        // cleanup swagger import
+        model.imports.remove(ApiModelProperty.class.getSimpleName());
+        model.imports.remove(ApiModel.class.getSimpleName());
+    }
 
 }
