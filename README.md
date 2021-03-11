@@ -52,6 +52,9 @@ There are just the following configurations, which are displayed in the example 
                 <generatorName>springCodegenWithoutSwagger</generatorName>
                 <library>without-swagger</library>
                 <configOptions>
+                    <!-- Enable OpenAPI Jackson Nullable library -->
+                    <openApiNullable>false</openApiNullable>
+                    <!-- title will be used in application-configuration to configure the base-path -->
                     <title>petstore</title>
                     <apiFirst>false</apiFirst>
                     <delegatePattern>true</delegatePattern>

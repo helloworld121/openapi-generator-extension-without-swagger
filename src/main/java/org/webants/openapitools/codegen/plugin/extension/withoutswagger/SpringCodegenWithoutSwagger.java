@@ -9,6 +9,7 @@ import org.openapitools.codegen.languages.SpringCodegen;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SpringCodegenWithoutSwagger
         extends SpringCodegen {
@@ -33,7 +34,14 @@ public class SpringCodegenWithoutSwagger
     public List<SupportingFile> supportingFiles() {
         // this is necessary to remove supporting files like pom...
         // => the purpose of this extension is to generate just API and Models
-        return Collections.emptyList();
+//        return Collections.emptyList();
+
+        // i couldnt find an easy way to exclude specific support-files, therefore the filter
+        this.supportingFiles = this.supportingFiles
+                .stream()
+                .filter(supportingFile -> supportingFile.getTemplateFile().equals("apiUtil.mustache"))
+                .collect(Collectors.toList());;
+        return this.supportingFiles;
     }
 
     @Override
